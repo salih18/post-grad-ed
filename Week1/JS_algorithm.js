@@ -10,7 +10,7 @@ const reverseString = (str) => {
 };
 
 const reversed = reverseString("hello");
-console.log(reversed)
+console.log(reversed);
 
 //2.Truncate a string (first argument)
 
@@ -52,18 +52,16 @@ const findElement = (arr, fn) => {
 };
 
 const result = findElement([1, 2, 3, 4], (num) => num % 5 === 0);
-console.log(result)
-
-
+console.log(result);
 
 // 5.Remove all falsy values from an array.
 // Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
 // Hint: Try converting each value to a Boolean.
 
 const bouncer = (arr) => {
-   const result = arr.filter(el => Boolean(el))
-   return result
-}
+  const result = arr.filter((el) => Boolean(el));
+  return result;
+};
 
 const exceptFalsy = bouncer([7, "ate", "", false, 9]);
-console.log(exceptFalsy)
+console.log(exceptFalsy);
