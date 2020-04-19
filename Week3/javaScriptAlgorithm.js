@@ -25,3 +25,57 @@ result = diffArray(
 );
 
 console.log(result);
+
+//Wherefore art thou
+
+function whatIsInAName(collection, source) {
+  const arr = collection.filter((item) =>
+    Object.entries(source).every(([key, val]) => item[key] === val)
+  );
+  return arr;
+}
+
+result = whatIsInAName(
+  [
+    { first: "Romeo", last: "Montague" },
+    { first: "Mercutio", last: null },
+    { first: "Tybalt", last: "Capulet" },
+  ],
+  { last: "Capulet" }
+);
+console.log(result);
+
+// Drop it
+
+function dropElements(arr, func) {
+  const toBeSliced =
+    arr.findIndex(func) >= 0 ? arr.findIndex(func) : arr.length;
+  return arr.slice(toBeSliced);
+}
+
+result = dropElements([1, 2, 3], function (n) {
+  return n > 3;
+});
+
+console.log(result);
+
+// Convert HTML
+
+function convertHTML(str) {
+  const entities = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;",
+  };
+
+  return str
+    .split("")
+    .map((word) => (entities[word] ? entities[word] : word))
+    .join("");
+}
+
+result = convertHTML("Dolce & Gabbana");
+
+console.log(result);
